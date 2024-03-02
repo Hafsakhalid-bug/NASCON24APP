@@ -8,7 +8,7 @@ import {
 } from 'react-native-responsive-dimensions';
 import {Dropdown} from 'react-native-element-dropdown';
 
-export default function ({navigation}) {
+export default function () {
   const [category, setCategory] = useState('');
   const [description, setDescription] = useState('');
   const [expense, setExpense] = useState('');
@@ -37,10 +37,6 @@ export default function ({navigation}) {
         }
       });
   }, []);
-
-  const handleLocation = async () => {
-    navigation.navigate('MapLocation')
-  }
 
   const addExpense = async () => {
     try {
@@ -238,31 +234,29 @@ export default function ({navigation}) {
           </Text>
         </View>
 
-        <TouchableWithoutFeedback onPress={handleLocation}>
-          <View
+        <View
+          style={{
+            height: responsiveHeight(8),
+            justifyContent: 'center',
+            marginLeft: responsiveWidth(5),
+            borderColor: 'lightgrey',
+            borderWidth: 1,
+            borderRadius: 10,
+            width: '90%',
+            padding: responsiveWidth(3),
+            marginTop: responsiveHeight(2),
+          }}>
+          <Text
             style={{
-              height: responsiveHeight(8),
-              justifyContent: 'center',
-              marginLeft: responsiveWidth(5),
-              borderColor: 'lightgrey',
-              borderWidth: 1,
-              borderRadius: 10,
-              width: '90%',
-              padding: responsiveWidth(3),
-              marginTop: responsiveHeight(2),
+              color: 'lightgrey',
+              fontSize: responsiveFontSize(2),
+              fontWeight: 'bold',
             }}>
-            <Text
-              style={{
-                color: 'lightgrey',
-                fontSize: responsiveFontSize(2),
-                fontWeight: 'bold',
-              }}>
-              Location
-            </Text>
-          </View>
-        </TouchableWithoutFeedback>
+            Location
+          </Text>
+        </View>
 
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback >
           <View
             style={{
               backgroundColor: '#C40000',
@@ -283,6 +277,7 @@ export default function ({navigation}) {
             </Text>
           </View>
         </TouchableWithoutFeedback>
+
       </View>
     </View>
   );

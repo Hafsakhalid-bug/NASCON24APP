@@ -74,6 +74,8 @@ export default function Signup({navigation}) {
         .database()
         .ref('users/' + user.uid)
         .set({
+          id: user.uid,
+          totalCredit:"20000",
           name,
           email,
           contact,
@@ -81,6 +83,7 @@ export default function Signup({navigation}) {
           city: selectedCity,
         });
       console.log('User data stored in Firebase Realtime Database');
+      navigation.navigate('Tabs');
     } catch (error) {
       console.error('Error registering user:', error);
       Alert.alert('Error registering user:', error.message);
@@ -164,9 +167,9 @@ export default function Signup({navigation}) {
           <TextInput
             placeholder="Enter Contact Number"
             placeholderTextColor={'rgba(145, 140, 140, 1)'}
-            keyboardType="email-address"
-            value={email}
-            onChangeText={text => setEmail(text)}
+            keyboardType="number-pad"
+            value={contact}
+            onChangeText={text => setContact(text)}
             style={styles.inputTextField}
           />
           <Text style={styles.inputText}>Country</Text>
@@ -271,7 +274,7 @@ export default function Signup({navigation}) {
           //   height: responsiveHeight(20),
           alignItems: 'center',
         }}>
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={handleRegistration}>
           <View
             style={{
               backgroundColor: 'rgba(233, 171, 23, 1)',
@@ -315,14 +318,14 @@ const styles = StyleSheet.create({
 
   inputTextField: {
     width: '100%',
-    height: responsiveHeight(4.5),
+    height: responsiveHeight(5),
     backgroundColor: 'rgba(255, 255, 255, 1)',
     borderRadius: 10,
     padding: responsiveWidth(3),
     //   fontFamily: 'Poppins-Medium',
     color: 'black',
     textAlignVertical: 'center',
-    fontSize: responsiveFontSize(1.4),
+    fontSize: responsiveFontSize(1.48),
     marginBottom: responsiveWidth(2),
     },
     dropdown: {

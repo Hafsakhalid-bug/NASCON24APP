@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
+import auth from '@react-native-firebase/auth';
 import {
   responsiveHeight,
   responsiveWidth,
@@ -16,6 +17,24 @@ import {
 export default function Login({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+    try {
+      const user = await auth().signInWithEmailAndPassword(email, password);
+      console.log(user);
+    } catch (error) {
+      if (error.code === 'auth/invalid-email') {
+        Alert.alert('Invalid Email', 'Please enter a valid email address');
+      }
+      if (error.code === 'auth/user-not-found') {
+        Alert.alert('User Not Found', 'Please enter a valid email address');
+      }
+      if (error.code === 'auth/wrong-password') {
+        Alert.alert('Invalid Password', 'Please enter a valid password');
+      }
+      console.log(error);
+    }
+  };
 
   return (
     <LinearGradient
@@ -88,7 +107,7 @@ export default function Login({navigation}) {
           />
         </View>
         <TouchableWithoutFeedback
-          onPress={ navigation.navigate('ResetPasswordScreen')}>
+          onPress={navigation.navigate('ResetPasswordScreen')}>
           <View
             style={{
               flexDirection: 'row',
@@ -109,7 +128,7 @@ export default function Login({navigation}) {
           //   height: responsiveHeight(20),
           alignItems: 'center',
         }}>
-              <TouchableWithoutFeedback onPress={navigation.navigate('SignUpScreen')}>
+        <TouchableWithoutFeedback onPress={handleLogin}>
           <View
             style={{
               backgroundColor: 'rgba(233, 171, 23, 1)',

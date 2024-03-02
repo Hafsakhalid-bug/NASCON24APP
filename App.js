@@ -9,6 +9,8 @@ import Onboarding1 from './screens/Onboarding1';
 import Onboarding2 from './screens/Onboarding2';
 import Onboarding3 from './screens/Onboarding3';
 import ResetPassword from './screens/ResetPassword';
+import Tabs from './screens/Tabs';
+import Expense from './screens/Expense';
 
 
 const Stack = createStackNavigator();
@@ -45,7 +47,13 @@ const AccountStack = () => (
       component={ResetPassword}
       options={{headerShown: false}}
     />
-    {/* <Stack.Screen name="HomeScreen" component={Tabs} options={{headerShown:false}}/> */}
+    <Stack.Screen
+      name="MapLocation"
+      component={MapScreen}
+      options={{headerShown: false}}
+    />
+
+    <Stack.Screen name="Tabs" component={Tabs} options={{headerShown:false}}/>
   </Stack.Navigator>
 );
 
@@ -62,9 +70,10 @@ const App = () => {
     <View style={{flex: 1, backgroundColor: '#fff'}}>
       {/* <Text>App</Text> */}
       {/* <SplashScreen/> */}
-      <NavigationContainer>
+      {/* <NavigationContainer>
         {appReady ? <AccountStack /> : <SplashScreen />}
-      </NavigationContainer>
+      </NavigationContainer> */}
+      <Expense/>
     </View>
   );
 };

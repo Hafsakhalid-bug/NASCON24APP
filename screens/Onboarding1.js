@@ -134,7 +134,7 @@ export default function Onboarding1({navigation}) {
               color: 'rgba(106,89,49,0.65)',
               fontSize: responsiveFontSize(1.8),
             }}>
-            Managing your finances is easier with us :\u0029
+            Managing your finances is easier with us :
           </Text>
         </View>
         <View

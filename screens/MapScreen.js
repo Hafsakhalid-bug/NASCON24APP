@@ -118,7 +118,7 @@ import {StyleSheet, View, PermissionsAndroid, ToastAndroid} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
 
-const MapScreen = () => {
+const MapScreen = ({navigation}) => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [searchLocation, setSearchLocation] = useState(null);
   const mapRef = useRef(null);
