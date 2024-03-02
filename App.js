@@ -26,15 +26,15 @@ const AccountStack = () => (
       options={{headerShown: false}}
     />
     <Stack.Screen
-      name="Onboarding3Screen"
+      name="OnboardingScreen3"
       component={Onboarding3}
       options={{headerShown: false}}
     />
-    {/* <Stack.Screen
+    <Stack.Screen
       name="LoginScreen"
       component={Login}
       options={{headerShown: false}}
-    /> */}
+    />
     <Stack.Screen
       name="SignUpScreen"
       component={Signup}
