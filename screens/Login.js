@@ -21,7 +21,8 @@ export default function Login({navigation}) {
   const handleLogin = async () => {
     try {
       const user = await auth().signInWithEmailAndPassword(email, password);
-      console.log(user);
+        console.log(user);
+        navigation.navigate('Tabs');
     } catch (error) {
       if (error.code === 'auth/invalid-email') {
         Alert.alert('Invalid Email', 'Please enter a valid email address');

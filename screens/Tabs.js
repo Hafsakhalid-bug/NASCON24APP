@@ -13,6 +13,8 @@ import {
   responsiveWidth,
   responsiveFontSize,
 } from 'react-native-responsive-dimensions';
+import MapScreen from './MapScreen';
+import Expense from './Expense';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -62,7 +64,7 @@ const Tabs = () => {
         />
         <Tab.Screen
           name="Transactions"
-          component={Transactions}
+          component={MapScreen}
           options={{
             tabBarIcon: ({focused}) => (
               <View style={{alignItems: 'center', justifyContent: 'center'}}>
@@ -91,7 +93,7 @@ const Tabs = () => {
 
         <Tab.Screen
       name="Add"
-          component={Add}
+          component={Expense}
           options={{
             tabBarIcon: ({focused}) => (
               <View

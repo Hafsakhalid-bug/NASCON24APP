@@ -70,10 +70,11 @@ const App = () => {
     <View style={{flex: 1, backgroundColor: '#fff'}}>
       {/* <Text>App</Text> */}
       {/* <SplashScreen/> */}
-      {/* <NavigationContainer>
-        {appReady ? <AccountStack /> : <SplashScreen />}
-      </NavigationContainer> */}
-      <Expense/>
+      <NavigationContainer>
+        {/* {appReady ? <AccountStack /> : <SplashScreen />} */}
+        <Tabs/>
+      </NavigationContainer> 
+      {/* // <Expense/> */}
     </View>
   );
 };
