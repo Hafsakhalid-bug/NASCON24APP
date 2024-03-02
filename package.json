@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.22.3",
     "@react-native-community/blur": "^4.4.0",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-firebase/app": "^19.0.0",
@@ -20,6 +21,10 @@
     "@react-navigation/stack": "^6.3.25",
     "react": "18.2.0",
     "react-native": "0.73.5",
+    "axios": "^1.6.7",
+    "react": "18.2.0",
+    "react-native": "0.73.5",
+    "react-native-element-dropdown": "^2.10.1",
     "react-native-geolocation-service": "^5.3.1",
     "react-native-gesture-handler": "^2.15.0",
     "react-native-linear-gradient": "^2.8.3",
