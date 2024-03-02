@@ -8,8 +8,8 @@ import Signup from './screens/Signup';
 import Onboarding1 from './screens/Onboarding1';
 import Onboarding2 from './screens/Onboarding2';
 import Onboarding3 from './screens/Onboarding3';
+import ResetPassword from './screens/ResetPassword';
 
-// const [appReady, setAppReady] = useState(false);
 
 const Stack = createStackNavigator();
 
@@ -38,6 +38,11 @@ const AccountStack = () => (
     <Stack.Screen
       name="SignUpScreen"
       component={Signup}
+      options={{headerShown: false}}
+    />
+     <Stack.Screen
+      name="ResetPasswordScreen"
+      component={ResetPassword}
       options={{headerShown: false}}
     />
     {/* <Stack.Screen name="HomeScreen" component={Tabs} options={{headerShown:false}}/> */}

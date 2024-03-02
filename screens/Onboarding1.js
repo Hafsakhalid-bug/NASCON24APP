@@ -43,6 +43,12 @@ export default function Onboarding1({navigation}) {
   const handleSkip = () => {
     navigation.navigate('LoginScreen');
     }
+    const handleLogin = () => {
+        navigation.navigate('LoginScreen');
+    }
+    const handleSignUp = () => {
+        navigation.navigate('SignUpScreen');
+    }
     
   return (
     <View style={{flex: 1, backgroundColor: '#fff'}}>
@@ -189,7 +195,7 @@ export default function Onboarding1({navigation}) {
           </TouchableWithoutFeedback>
         </View>
         <View style={{marginTop: responsiveWidth(5), marginBottom: 0}}>
-          <TouchableWithoutFeedback>
+          <TouchableWithoutFeedback onPress={handleSignUp}>
             <View
               style={{
                 backgroundColor: 'rgba(57, 40, 0, 1)',
@@ -219,7 +225,7 @@ export default function Onboarding1({navigation}) {
               </Text>
             </View>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback>
+          <TouchableWithoutFeedback onPress={handleLogin}>
             <View
               style={{
                 backgroundColor: 'rgba(106, 89, 49, 1)',
