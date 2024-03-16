@@ -11,7 +11,7 @@ import Onboarding3 from './screens/Onboarding3';
 import ResetPassword from './screens/ResetPassword';
 import Tabs from './screens/Tabs';
 import Expense from './screens/Expense';
-
+import MapScreen from './screens/MapScreen';
 
 const Stack = createStackNavigator();
 
@@ -71,9 +71,9 @@ const App = () => {
       {/* <Text>App</Text> */}
       {/* <SplashScreen/> */}
       <NavigationContainer>
-        {/* {appReady ? <AccountStack /> : <SplashScreen />} */}
-        <Tabs/>
+        {appReady ? <AccountStack /> : <SplashScreen />}
       </NavigationContainer> 
+ // <Tabs/>
       {/* // <Expense/> */}
     </View>
   );
