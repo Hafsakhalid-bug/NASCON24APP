@@ -85,6 +85,7 @@ const App = () => {
       {/* <SplashScreen/> */}
       <NavigationContainer>
         {appReady ? <AccountStack /> : <SplashScreen />}
+        {appReady ? <AccountStack /> : <SplashScreen />}
       </NavigationContainer> 
       {/* <Login/> */}
       {/* // <Expense/> */}
