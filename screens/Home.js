@@ -67,7 +67,7 @@ const Home = () => {
               fontSize: responsiveFontSize(3),
               fontWeight: 'bold',
             }}>
-            Hadeed
+            Hafsa
           </Text>
         </View>
       </View>

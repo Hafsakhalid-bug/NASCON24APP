@@ -11,7 +11,10 @@ import Onboarding3 from './screens/Onboarding3';
 import ResetPassword from './screens/ResetPassword';
 import Tabs from './screens/Tabs';
 import Expense from './screens/Expense';
-
+import MapScreen from './screens/MapScreen';
+import OTPScreen from './screens/OTPScreen';
+import ForgotPassword from './screens/ForgotPassword';
+import EmailSent from './screens/EmailSent';
 
 const Stack = createStackNavigator();
 
@@ -38,13 +41,23 @@ const AccountStack = () => (
       options={{headerShown: false}}
     />
     <Stack.Screen
-      name="SignUpScreen"
-      component={Signup}
+      name="ForgotPasswordScreen"
+      component={ForgotPassword}
       options={{headerShown: false}}
     />
-     <Stack.Screen
+    <Stack.Screen
+    name="EmailSentScreen"
+    component={EmailSent}
+    options={{headerShown: false}}
+  />
+    <Stack.Screen
       name="ResetPasswordScreen"
       component={ResetPassword}
+      options={{headerShown: false}}
+    />
+    <Stack.Screen
+      name="SignUpScreen"
+      component={Signup}
       options={{headerShown: false}}
     />
     <Stack.Screen
@@ -71,10 +84,11 @@ const App = () => {
       {/* <Text>App</Text> */}
       {/* <SplashScreen/> */}
       <NavigationContainer>
-        {/* {appReady ? <AccountStack /> : <SplashScreen />} */}
-        <Tabs/>
+        {appReady ? <AccountStack /> : <SplashScreen />}
       </NavigationContainer> 
+      {/* <Login/> */}
       {/* // <Expense/> */}
+      {/* <OTPScreen/> */}
     </View>
   );
 };

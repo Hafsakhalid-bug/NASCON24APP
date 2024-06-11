@@ -18,7 +18,7 @@ export default function Onboarding1({navigation}) {
   const [board2Focus, setBoard2Focus] = useState(false);
   const [board3Focus, setBoard3Focus] = useState(false);
 
-    const handleBoard1 = () => {
+  const handleBoard1 = () => {
     setBoard1Focus(true);
     setBoard2Focus(false);
     setBoard3Focus(false);
@@ -39,17 +39,16 @@ export default function Onboarding1({navigation}) {
     navigation.navigate('OnboardingScreen3');
   };
 
-    
   const handleSkip = () => {
     navigation.navigate('LoginScreen');
-    }
-    const handleLogin = () => {
-        navigation.navigate('LoginScreen');
-    }
-    const handleSignUp = () => {
-        navigation.navigate('SignUpScreen');
-    }
-    
+  };
+  const handleLogin = () => {
+    navigation.navigate('LoginScreen');
+  };
+  const handleSignUp = () => {
+    navigation.navigate('SignUpScreen');
+  };
+
   return (
     <View style={{flex: 1, backgroundColor: '#fff'}}>
       <View
@@ -76,8 +75,8 @@ export default function Onboarding1({navigation}) {
               borderRadius: responsiveWidth(5),
               position: 'absolute',
               right: responsiveWidth(5),
-                          top: responsiveHeight(4),
-              zIndex:1,
+              top: responsiveHeight(4),
+              zIndex: 1,
             }}>
             <Text
               style={{
@@ -118,21 +117,33 @@ export default function Onboarding1({navigation}) {
         <View
           style={{
             // backgroundColor: 'pink',
-            width: responsiveWidth(60),
-            height: responsiveHeight(10),
+            width: responsiveWidth(70),
+            height: responsiveHeight(12),
+            alignItems: 'center',
+            justifyContent:'center'
           }}>
           <Text
             style={{
               color: 'rgba(233,171,23,1)',
-              fontSize: responsiveFontSize(4),
+              fontSize: responsiveHeight(4),
               fontWeight: 'bold',
+              textAlign: 'center',
             }}>
             Take full control of your finances
           </Text>
+        </View>
+        <View
+        style={{
+          // backgroundColor: 'yellow',
+          width: responsiveWidth(60),
+          height: responsiveHeight(5),
+        }}
+        >
           <Text
             style={{
               color: 'rgba(106,89,49,0.65)',
-              fontSize: responsiveFontSize(1.8),
+              fontSize: responsiveHeight(1.8),
+              textAlign: 'center',
             }}>
             Managing your finances is easier with us :
           </Text>
@@ -151,7 +162,13 @@ export default function Onboarding1({navigation}) {
           <TouchableWithoutFeedback onPress={handleBoard1}>
             <View>
               {board1Focus === false ? (
-                <Text style={{color: 'rgba(233, 171, 23, 1)',fontSize:responsiveFontSize(4)}}>●</Text>
+                <Text
+                  style={{
+                    color: 'rgba(233, 171, 23, 1)',
+                    fontSize: responsiveFontSize(4),
+                  }}>
+                  ●
+                </Text>
               ) : (
                 <Text
                   style={{
@@ -166,7 +183,13 @@ export default function Onboarding1({navigation}) {
           <TouchableWithoutFeedback onPress={handleBoard2}>
             <View>
               {board2Focus === false ? (
-                <Text style={{color: 'rgba(233, 171, 23, 1)',fontSize:responsiveFontSize(4)}}>●</Text>
+                <Text
+                  style={{
+                    color: 'rgba(233, 171, 23, 1)',
+                    fontSize: responsiveFontSize(4),
+                  }}>
+                  ●
+                </Text>
               ) : (
                 <Text
                   style={{
@@ -181,7 +204,13 @@ export default function Onboarding1({navigation}) {
           <TouchableWithoutFeedback onPress={handleBoard3}>
             <View>
               {board3Focus === false ? (
-                <Text style={{color: 'rgba(233, 171, 23, 1)',fontSize:responsiveFontSize(4)}}>●</Text>
+                <Text
+                  style={{
+                    color: 'rgba(233, 171, 23, 1)',
+                    fontSize: responsiveFontSize(4),
+                  }}>
+                  ●
+                </Text>
               ) : (
                 <Text
                   style={{

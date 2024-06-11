@@ -4,6 +4,8 @@ import {
   StyleSheet,
   TextInput,
   TouchableWithoutFeedback,
+  TouchableOpacity,
+  Image,
 } from 'react-native';
 import React, {useState} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
@@ -17,12 +19,14 @@ import {
 export default function Login({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [show, setShow] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   const handleLogin = async () => {
     try {
       const user = await auth().signInWithEmailAndPassword(email, password);
-        console.log(user);
-        navigation.navigate('Tabs');
+      console.log(user);
+      navigation.navigate('Tabs');
     } catch (error) {
       if (error.code === 'auth/invalid-email') {
         Alert.alert('Invalid Email', 'Please enter a valid email address');
@@ -101,14 +105,30 @@ export default function Login({navigation}) {
           <TextInput
             placeholder="Enter your Password"
             placeholderTextColor={'rgba(145, 140, 140, 1)'}
-            secureTextEntry={true}
+            secureTextEntry={visible}
             value={password}
             onChangeText={text => setPassword(text)}
             style={styles.inputTextField}
           />
+          <TouchableOpacity
+            style={styles.iconViewStyle}
+            onPress={() => {
+              setVisible(!visible);
+              setShow(!show);
+            }}>
+            <Image
+              source={
+                show === false
+                  ? require('../assets/icons/show-password.png')
+                  : require('../assets/icons/hide-password.png')
+              }
+              style={styles.iconStyle}
+            />
+          </TouchableOpacity>
         </View>
         <TouchableWithoutFeedback
-          onPress={navigation.navigate('ResetPasswordScreen')}>
+        onPress={()=>{navigation.navigate('ForgotPasswordScreen')}}
+        >
           <View
             style={{
               flexDirection: 'row',
@@ -124,9 +144,7 @@ export default function Login({navigation}) {
       </View>
       <View
         style={{
-          //   backgroundColor: 'green',
           width: responsiveWidth(80),
-          //   height: responsiveHeight(20),
           alignItems: 'center',
         }}>
         <TouchableWithoutFeedback onPress={handleLogin}>
@@ -159,7 +177,6 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
   inputText: {
     fontSize: responsiveFontSize(1.8),
-    //   fontFamily: 'Poppins-Medium',
     color: 'rgba(255, 255, 255, 1)',
     fontWeight: '500',
     marginBottom: responsiveHeight(1),
@@ -171,10 +188,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255, 255, 255, 1)',
     borderRadius: 10,
     padding: responsiveWidth(3),
-    //   fontFamily: 'Poppins-Medium',
     color: 'black',
     textAlignVertical: 'center',
     fontSize: responsiveFontSize(1.4),
     marginBottom: responsiveWidth(2),
+  },
+  iconStyle: {
+    width: responsiveWidth(5),
+    height: responsiveWidth(5),
+    tintColor: 'rgba(145, 145, 159, 1)',
+  },
+  iconViewStyle: {
+    position: 'absolute',
+    right: responsiveWidth(5),
+    top: responsiveHeight(15),
   },
 });

@@ -16,8 +16,6 @@ export default function SplashScreen() {
         backgroundColor: '#392800',
         width: responsiveWidth(100),
         height: responsiveHeight(100),
-        // alignItems: 'center',
-        // justifyContent: 'center',
       }}>
       <View
         style={{
@@ -31,8 +29,6 @@ export default function SplashScreen() {
           style={{
             width: responsiveWidth(100),
             height: responsiveHeight(25),
-
-            //   margin: responsiveWidth(5),
           }}>
           <View
             style={{height: responsiveHeight(15), margin: responsiveWidth(10)}}>
@@ -41,12 +37,6 @@ export default function SplashScreen() {
                 '#E9AB19',
                 '#E9AB17',
                 '#E9AB19',
-                //   '#E9AB1791',
-                //   '#E9AB1791',
-                //   '#E9AB1791',
-                //   '#E9AB1791',
-                //   '#E9AB1791',
-                //   'transparent',
               ]}
               start={{x: 0, y: 0}}
               end={{x: 1, y: 1}}
@@ -60,7 +50,6 @@ export default function SplashScreen() {
                 overflow: 'hidden',
                 position: 'absolute',
               }}>
-              {/* <GradientText text="WalletWise'/> */}
               <BlurView
                 style={{
                   position: 'absolute',
@@ -82,7 +71,6 @@ export default function SplashScreen() {
               position: 'relative',
               top: responsiveHeight(-19),
               left: responsiveHeight(8),
-              // backgroundColor: 'green',
             }}>
             <Text
               style={{
@@ -106,7 +94,6 @@ export default function SplashScreen() {
               height: responsiveHeight(10),
               alignItems: 'center',
               position: 'relative',
-              //   backgroundColor:'grey',
               top: responsiveHeight(-15),
             }}>
             <Text style={styles.textStyle}>Your Compass to Financial</Text>
